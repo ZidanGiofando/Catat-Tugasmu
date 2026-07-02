@@ -13,150 +13,203 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- Toolbar -->
+
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:background="#4F46E5"
+            android:elevation="6dp"
             android:title="Tambah Tugas"
             android:titleTextColor="@android:color/white"
-            android:background="#4F46E5"
             app:navigationIcon="@drawable/ic_back"
             app:navigationIconTint="@android:color/white"/>
 
-        <LinearLayout
+        <!-- Card Form -->
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:layout_margin="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="3dp"
+            app:strokeColor="#E5E7EB"
+            app:strokeWidth="1dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Buat tugas baru dan atur deadline"
-                android:textColor="#6B7280"
-                android:textSize="15sp"
-                android:layout_marginBottom="24dp"/>
-
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Judul Tugas"
-                app:startIconDrawable="@drawable/ic_task">
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:paddingBottom="30dp">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etTitle"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buat tugas baru dan atur deadline"
+                    android:textColor="#6B7280"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="24dp"/>
+
+                <!-- Judul -->
+
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:hint="Judul Tugas"
+                    app:startIconDrawable="@drawable/ic_task"
+                    app:boxBackgroundMode="filled">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences"
+                        android:maxLines="1"/>
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="16dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Deskripsi">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etDescription"
+                <Space
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:gravity="top"
-                    android:inputType="textMultiLine"
-                    android:minLines="4"/>
+                    android:layout_height="16dp"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
+                <!-- Deskripsi -->
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Deskripsi"
+                    app:startIconDrawable="@drawable/ic_description"
+                    app:boxBackgroundMode="filled"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="300">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Deadline"
-                android:textStyle="bold"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:gravity="top"
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:maxLength="300"
+                        android:minLines="4"/>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Pilih Tanggal"
-                android:layout_marginTop="8dp"
-                android:icon="@drawable/ic_calendar"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="16dp"/>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Waktu"
-                android:textStyle="bold"/>
+                <!-- Deadline -->
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnTime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Pilih Waktu"
-                android:layout_marginTop="8dp"
-                android:icon="@drawable/ic_time"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tanggal Deadline"
+                    app:startIconDrawable="@drawable/ic_calendar"
+                    app:boxBackgroundMode="filled">
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="24dp"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDeadline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:inputType="none"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Prioritas"
-                android:textStyle="bold"
-                android:textSize="16sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <RadioGroup
-                android:id="@+id/rgPriority"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"/>
 
-                <RadioButton
-                    android:id="@+id/rbHigh"
+                <!-- Jam -->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Jam Deadline"
+                    app:startIconDrawable="@drawable/ic_time"
+                    app:boxBackgroundMode="filled">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:inputType="none"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"/>
+
+                <!-- Priority -->
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="High"/>
+                    android:text="Prioritas"
+                    android:textColor="#111827"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
 
-                <RadioButton
-                    android:id="@+id/rbMedium"
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipPriority"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Medium"/>
+                    android:layout_marginTop="12dp"
+                    app:selectionRequired="true"
+                    app:singleLine="true"
+                    app:singleSelection="true">
 
-                <RadioButton
-                    android:id="@+id/rbLow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Low"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipHigh"
+                        style="@style/Widget.Material3.Chip.Assist"
+                        android:text="High"/>
 
-            </RadioGroup>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipMedium"
+                        style="@style/Widget.Material3.Chip.Assist"
+                        android:checked="true"
+                        android:text="Medium"/>
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="30dp"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipLow"
+                        style="@style/Widget.Material3.Chip.Assist"
+                        android:text="Low"/>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnSave"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:text="SIMPAN TUGAS"
-                android:textStyle="bold"
-                android:textAllCaps="false"
-                android:textSize="16sp"
-                android:backgroundTint="#4F46E5"
-                app:cornerRadius="16dp"/>
+                </com.google.android.material.chip.ChipGroup>
 
-        </LinearLayout>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"/>
+
+                <!-- Save -->
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:backgroundTint="#4F46E5"
+                    android:text="Simpan Tugas"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="16dp"
+                    app:iconGravity="textStart"
+                    app:rippleColor="#D1D5DB"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 

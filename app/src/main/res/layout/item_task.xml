@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <com.google.android.material.card.MaterialCardView
+    android:id="@+id/cardTask"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -31,7 +32,7 @@
                 android:tint="#4F46E5"/>
 
             <TextView
-                android:id="@+id/txtTitle"
+                android:id="@+id/tvTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -42,7 +43,7 @@
                 android:textColor="#111827"/>
 
             <TextView
-                android:id="@+id/txtStatus"
+                android:id="@+id/tvStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Aktif"
@@ -55,7 +56,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/txtDescription"
+            android:id="@+id/tvDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Belajar RecyclerView dan Retrofit"
@@ -75,7 +76,7 @@
                 android:src="@drawable/ic_calendar"/>
 
             <TextView
-                android:id="@+id/txtDeadline"
+                android:id="@+id/tvDeadline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="30 Juni 2026"
@@ -97,7 +98,7 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/txtPriority"
+                android:id="@+id/tvPriority"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" HIGH "
@@ -117,12 +118,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="spaceEvenly">
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/btnEdit"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
+                android:layout_marginHorizontal="16dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_edit"
                 android:contentDescription="Edit"/>
@@ -131,6 +134,7 @@
                 android:id="@+id/btnDelete"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
+                android:layout_marginHorizontal="16dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_delete"
                 android:contentDescription="Delete"/>
@@ -139,6 +143,7 @@
                 android:id="@+id/btnDone"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
+                android:layout_marginHorizontal="16dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_done"
                 android:contentDescription="Done"/>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,39 +13,32 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <!-- Greeting -->
-        <TextView
-            android:id="@+id/txtGreeting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Selamat Pagi 👋"
-            android:textStyle="bold"
-            android:textSize="24sp"
-            android:textColor="#111827"/>
+        <!-- Header -->
 
         <TextView
-            android:id="@+id/txtUserName"
+            android:id="@+id/tvGreeting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Zidan"
-            android:textStyle="bold"
-            android:textSize="30sp"
-            android:textColor="#4F46E5"
-            android:layout_marginTop="4dp"/>
+            android:text="Halo 👋"
+            android:textColor="#111827"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txtDate"
+            android:id="@+id/tvSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Senin, 29 Juni 2026"
+            android:layout_marginTop="4dp"
+            android:text="Selamat datang kembali"
             android:textColor="#6B7280"
-            android:textSize="15sp"
-            android:layout_marginBottom="24dp"/>
+            android:textSize="15sp" />
 
         <!-- Statistik -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:orientation="horizontal"
             android:weightSum="3">
 
@@ -54,7 +46,7 @@
                 android:layout_width="0dp"
                 android:layout_height="110dp"
                 android:layout_weight="1"
-                android:layout_margin="4dp"
+                android:layout_marginEnd="6dp"
                 app:cardCornerRadius="16dp">
 
                 <LinearLayout
@@ -64,42 +56,18 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:text="Total"
-                        android:textStyle="bold"
-                        android:textSize="15sp"/>
-
-                    <TextView
-                        android:id="@+id/txtTotalTask"
+                        android:id="@+id/tvTotalTask"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="0"
-                        android:textSize="30sp"
-                        android:textStyle="bold"/>
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="110dp"
-                android:layout_weight="1"
-                android:layout_margin="4dp"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:text="Selesai"
+                        android:textColor="#4F46E5"
+                        android:textSize="28sp"
                         android:textStyle="bold"/>
 
                     <TextView
-                        android:id="@+id/txtDoneTask"
-                        android:text="0"
-                        android:textSize="30sp"
-                        android:textStyle="bold"
-                        android:textColor="#22C55E"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total"/>
 
                 </LinearLayout>
 
@@ -109,7 +77,7 @@
                 android:layout_width="0dp"
                 android:layout_height="110dp"
                 android:layout_weight="1"
-                android:layout_margin="4dp"
+                android:layout_marginHorizontal="6dp"
                 app:cardCornerRadius="16dp">
 
                 <LinearLayout
@@ -119,15 +87,49 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:text="Belum"
+                        android:id="@+id/tvActiveTask"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#F59E0B"
+                        android:textSize="28sp"
                         android:textStyle="bold"/>
 
                     <TextView
-                        android:id="@+id/txtPendingTask"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Aktif"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvDoneTask"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="0"
-                        android:textSize="30sp"
-                        android:textStyle="bold"
-                        android:textColor="#EF4444"/>
+                        android:textColor="#10B981"
+                        android:textSize="28sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Selesai"/>
 
                 </LinearLayout>
 
@@ -135,20 +137,24 @@
 
         </LinearLayout>
 
+        <!-- Judul -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tugas Hari Ini"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:textColor="#111827"
             android:layout_marginTop="28dp"
-            android:layout_marginBottom="12dp"/>
+            android:text="Task Terbaru"
+            android:textColor="#111827"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <!-- RecyclerView -->
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvTodayTask"
+            android:id="@+id/rvRecentTask"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:nestedScrollingEnabled="false"/>
 
     </LinearLayout>
