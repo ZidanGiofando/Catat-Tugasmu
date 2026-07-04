@@ -61,11 +61,15 @@
                     android:background="#E5E7EB"/>
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Deadline"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/txtDeadline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="30 Juni 2026"/>
 
                 <Space
@@ -73,11 +77,15 @@
                     android:layout_height="16dp"/>
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Waktu"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/txtTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="19:30"/>
 
                 <Space
@@ -85,11 +93,15 @@
                     android:layout_height="16dp"/>
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Prioritas"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/txtPriority"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="HIGH"
                     android:textColor="#FFFFFF"
                     android:padding="8dp"
@@ -100,11 +112,15 @@
                     android:layout_height="16dp"/>
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Status"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/txtStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Belum Selesai"
                     android:textColor="#FFFFFF"
                     android:padding="8dp"

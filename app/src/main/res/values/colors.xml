@@ -2,39 +2,28 @@
 <resources>
 
     <!-- Primary -->
-    <color name="primary">#4F46E5</color>
-    <color name="primary_dark">#4338CA</color>
-    <color name="primary_light">#EEF2FF</color>
-
-    <!-- Secondary -->
-    <color name="secondary">#6366F1</color>
+    <color name="purple_primary">#6C63FF</color>
+    <color name="purple_dark">#594DFF</color>
+    <color name="purple_light">#A393FF</color>
 
     <!-- Background -->
-    <color name="background">#F8FAFC</color>
+    <color name="background">#F7F7FC</color>
+    <color name="surface">#FFFFFF</color>
 
     <!-- Text -->
-    <color name="text_primary">#111827</color>
-    <color name="text_secondary">#6B7280</color>
+    <color name="text_primary">#262626</color>
+    <color name="text_secondary">#808080</color>
+
+    <!-- Status -->
+    <color name="success">#34C759</color>
+    <color name="warning">#FFB020</color>
+    <color name="danger">#FF5F6D</color>
+
+    <!-- Divider -->
+    <color name="divider">#ECECEC</color>
 
     <!-- White -->
     <color name="white">#FFFFFF</color>
-
-    <!-- Black -->
-    <color name="black">#000000</color>
-
-    <!-- Success -->
-    <color name="success">#22C55E</color>
-
-    <!-- Warning -->
-    <color name="warning">#F59E0B</color>
-
-    <!-- Danger -->
-    <color name="danger">#EF4444</color>
-
-    <!-- Divider -->
-    <color name="divider">#E5E7EB</color>
-
-    <!-- Card -->
-    <color name="card">#FFFFFF</color>
-
+    <color name="primary">@color/purple_primary</color>
+    <color name="primaryDark">@color/purple_dark</color>
 </resources>

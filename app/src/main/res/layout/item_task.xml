@@ -1,151 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <com.google.android.material.card.MaterialCardView
-    android:id="@+id/cardTask"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardTask"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="16dp"
-    android:layout_marginVertical="8dp"
-    app:cardCornerRadius="18dp"
-    app:cardElevation="4dp"
-    app:strokeColor="#E5E7EB"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="10dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="3dp"
+    app:strokeColor="@color/divider"
     app:strokeWidth="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="18dp">
 
-        <!-- Header -->
+        <!-- HEADER -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical">
 
             <ImageView
-                android:layout_width="26dp"
-                android:layout_height="26dp"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:padding="10dp"
+                android:background="@drawable/bg_chip"
                 android:src="@drawable/ic_task"
-                android:tint="#4F46E5"/>
+                app:tint="@color/purple_primary"/>
 
-            <TextView
-                android:id="@+id/tvTitle"
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginStart="10dp"
-                android:text="Belajar Android"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="#111827"/>
+                android:layout_marginStart="14dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belajar Android"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/text_primary"/>
+
+                <TextView
+                    android:id="@+id/tvDeadline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="📅 30 Juni 2026"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_secondary"/>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tvStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_chip"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="6dp"
                 android:text="Aktif"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="4dp"
-                android:background="@drawable/bg_status_pending"/>
+                android:textColor="@color/purple_primary"
+                android:textStyle="bold"/>
 
         </LinearLayout>
+
+        <!-- DESCRIPTION -->
 
         <TextView
             android:id="@+id/tvDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Belajar RecyclerView dan Retrofit"
-            android:textColor="#6B7280"
-            android:textSize="14sp"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="14dp"
+            android:text="Belajar RecyclerView dan Firebase"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"/>
+
+        <!-- PRIORITY -->
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp">
-
-            <ImageView
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:src="@drawable/ic_calendar"/>
-
-            <TextView
-                android:id="@+id/tvDeadline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="30 Juni 2026"
-                android:textColor="#6B7280"
-                android:layout_marginStart="6dp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp">
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_chip"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Priority"
-                android:textStyle="bold"/>
+                android:text="Priority : "
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"/>
 
             <TextView
                 android:id="@+id/tvPriority"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" HIGH "
+                android:text="HIGH"
                 android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/bg_priority_high"/>
+                android:textColor="@color/purple_primary"/>
 
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginVertical="16dp"
-            android:background="#E5E7EB"/>
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="14dp"
+            android:background="@color/divider"/>
+
+        <!-- ACTION -->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:weightSum="3">
 
             <ImageButton
                 android:id="@+id/btnEdit"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginHorizontal="16dp"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_edit"
+                app:tint="@color/purple_primary"
                 android:contentDescription="Edit"/>
 
             <ImageButton
                 android:id="@+id/btnDelete"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginHorizontal="16dp"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_delete"
+                app:tint="@color/danger"
                 android:contentDescription="Delete"/>
 
             <ImageButton
                 android:id="@+id/btnDone"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginHorizontal="16dp"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_done"
+                app:tint="@color/success"
                 android:contentDescription="Done"/>
 
         </LinearLayout>

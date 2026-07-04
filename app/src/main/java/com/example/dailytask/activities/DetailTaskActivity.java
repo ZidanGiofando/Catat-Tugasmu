@@ -129,7 +129,7 @@ public class DetailTaskActivity extends AppCompatActivity {
     }
 
     private void completeTask() {
-        apiInterface.completeTask(taskId).enqueue(new Callback<BaseResponse<Object>>() {
+        apiInterface.completeTask(taskId, preferenceManager.getUid()).enqueue(new Callback<BaseResponse<Object>>() {
             @Override
             public void onResponse(Call<BaseResponse<Object>> call, Response<BaseResponse<Object>> response) {
                 if (response.isSuccessful() && response.body() != null) {
@@ -155,7 +155,7 @@ public class DetailTaskActivity extends AppCompatActivity {
     }
 
     private void deleteTask() {
-        apiInterface.deleteTask(taskId).enqueue(new Callback<BaseResponse<Object>>() {
+        apiInterface.deleteTask(taskId, preferenceManager.getUid()).enqueue(new Callback<BaseResponse<Object>>() {
             @Override
             public void onResponse(Call<BaseResponse<Object>> call, Response<BaseResponse<Object>> response) {
                 if (response.isSuccessful() && response.body() != null) {

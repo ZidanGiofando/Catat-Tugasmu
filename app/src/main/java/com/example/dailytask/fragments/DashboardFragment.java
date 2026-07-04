@@ -220,7 +220,7 @@ public class DashboardFragment extends Fragment implements TaskAdapter.OnTaskAct
 
     @Override
     public void onDeleteClick(Task task) {
-        apiInterface.deleteTask(task.getId()).enqueue(new Callback<BaseResponse<Object>>() {
+        apiInterface.deleteTask(task.getId(), preferenceManager.getUid()).enqueue(new Callback<BaseResponse<Object>>() {
             @Override
             public void onResponse(Call<BaseResponse<Object>> call, Response<BaseResponse<Object>> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
@@ -236,7 +236,7 @@ public class DashboardFragment extends Fragment implements TaskAdapter.OnTaskAct
 
     @Override
     public void onCompleteClick(Task task) {
-        apiInterface.completeTask(task.getId()).enqueue(new Callback<BaseResponse<Object>>() {
+        apiInterface.completeTask(task.getId(), preferenceManager.getUid()).enqueue(new Callback<BaseResponse<Object>>() {
             @Override
             public void onResponse(Call<BaseResponse<Object>> call, Response<BaseResponse<Object>> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {

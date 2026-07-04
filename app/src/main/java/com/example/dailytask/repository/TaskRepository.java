@@ -66,6 +66,7 @@ public class TaskRepository {
      */
     public Call<BaseResponse<Object>> updateTask(
             int id,
+            String userUid,
             String title,
             String description,
             String deadline,
@@ -74,6 +75,7 @@ public class TaskRepository {
 
         return api.updateTask(
                 id,
+                userUid,
                 title,
                 description,
                 deadline,
@@ -84,15 +86,15 @@ public class TaskRepository {
     /**
      * Hapus task
      */
-    public Call<BaseResponse<Object>> deleteTask(int id) {
-        return api.deleteTask(id);
+    public Call<BaseResponse<Object>> deleteTask(int id, String userUid) {
+        return api.deleteTask(id, userUid);
     }
 
     /**
      * Tandai selesai
      */
-    public Call<BaseResponse<Object>> completeTask(int id) {
-        return api.completeTask(id);
+    public Call<BaseResponse<Object>> completeTask(int id, String userUid) {
+        return api.completeTask(id, userUid);
     }
 
 }

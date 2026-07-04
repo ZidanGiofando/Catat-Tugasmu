@@ -269,7 +269,7 @@ public class TaskFragment extends Fragment
 
         progressBar.setVisibility(View.VISIBLE);
 
-        apiInterface.deleteTask(taskId)
+        apiInterface.deleteTask(taskId, preferenceManager.getUid())
                 .enqueue(new Callback<BaseResponse<Object>>() {
 
                     @Override
@@ -335,7 +335,7 @@ public class TaskFragment extends Fragment
 
         progressBar.setVisibility(View.VISIBLE);
 
-        apiInterface.completeTask(taskId)
+        apiInterface.completeTask(taskId, preferenceManager.getUid())
                 .enqueue(new Callback<BaseResponse<Object>>() {
 
                     @Override

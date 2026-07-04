@@ -55,11 +55,14 @@ public interface ApiInterface {
 
     /**
      * Update Task
+     * user_uid wajib dikirim agar server dapat memastikan task yang
+     * diupdate benar-benar milik user yang sedang login.
      */
     @FormUrlEncoded
     @POST("task_update.php")
     Call<BaseResponse<Object>> updateTask(
             @Field("id") int id,
+            @Field("user_uid") String userUid,
             @Field("title") String title,
             @Field("description") String description,
             @Field("deadline") String deadline,
@@ -68,20 +71,25 @@ public interface ApiInterface {
 
     /**
      * Hapus Task
+     * user_uid wajib dikirim agar user lain tidak bisa menghapus
+     * task milik user lain hanya dengan menebak id.
      */
     @FormUrlEncoded
     @POST("task_delete.php")
     Call<BaseResponse<Object>> deleteTask(
-            @Field("id") int id
+            @Field("id") int id,
+            @Field("user_uid") String userUid
     );
 
     /**
      * Tandai Task Selesai
+     * user_uid wajib dikirim untuk validasi kepemilikan task.
      */
     @FormUrlEncoded
     @POST("task_complete.php")
     Call<BaseResponse<Object>> completeTask(
-            @Field("id") int id
+            @Field("id") int id,
+            @Field("user_uid") String userUid
     );
 
 }

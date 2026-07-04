@@ -12,10 +12,13 @@ import com.example.dailytask.fragments.DashboardFragment;
 import com.example.dailytask.fragments.ProfileFragment;
 import com.example.dailytask.fragments.TaskFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigation;
+    private FloatingActionButton fabAddTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         initView();
         setupBottomNavigation();
-
+        fabAddTask.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, AddTaskActivity.class));
+        });
         // Fragment pertama yang ditampilkan
         if (savedInstanceState == null) {
 
@@ -44,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
 
         bottomNavigation = findViewById(R.id.bottomNavigation);
-
+        fabAddTask = findViewById(R.id.fabAddTask);
     }
 
     /**

@@ -355,12 +355,13 @@ public class AddTaskActivity extends AppCompatActivity {
 
         showLoading();
 
+        String uid = preferenceManager.getUid();
         String title = etTitle.getText().toString().trim();
         String desc = etDescription.getText().toString().trim();
         String deadline = etDeadline.getText().toString().trim() + " " + etTime.getText().toString().trim() + ":00";
         String priority = getSelectedPriority();
 
-        apiInterface.updateTask(taskId, title, desc, deadline, priority)
+        apiInterface.updateTask(taskId, uid, title, desc, deadline, priority)
                 .enqueue(new Callback<BaseResponse<Object>>() {
                     @Override
                     public void onResponse(Call<BaseResponse<Object>> call, Response<BaseResponse<Object>> response) {

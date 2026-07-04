@@ -5,9 +5,10 @@
     <gradient
         android:startColor="@color/purple_light"
         android:endColor="@color/purple_primary"
-        android:angle="0"/>
+        android:angle="270"/>
 
     <corners
-        android:radius="@dimen/radius_medium"/>
+        android:bottomLeftRadius="36dp"
+        android:bottomRightRadius="36dp"/>
 
 </shape>

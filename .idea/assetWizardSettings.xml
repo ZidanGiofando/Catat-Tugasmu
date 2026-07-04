@@ -349,7 +349,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$PROJECT_DIR$/../../../zidan%20giofando/AppData/Local/Android/Sdk/icons/material/materialsymbolsoutlined/box_edit/outline_box_edit_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialsymbolsoutlined/block/outline_block_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -359,8 +359,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_description" />
+                            <entry key="outputName" value="ic_lock" />
                             <entry key="sourceFile" value="C:\Users\zidan giofando\AndroidStudioProjects\DailyTask\icon\ic_description.svg" />
                           </map>
                         </option>
